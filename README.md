@@ -41,8 +41,10 @@ src/
    Lembre-se de executar os comandos dentro da pasta raiz do projeto:
 
 Bash
-npm install 3. Configuração do Proxy
-O projeto está configurado para redirecionar chamadas de /api para o servidor do Render automaticamente via vite.config.ts. Caso precise mudar o alvo, altere a propriedade target no arquivo de configuração.
+npm install
+
+3. Configuração do Proxy
+   O projeto está configurado para redirecionar chamadas de /api para o servidor do Render automaticamente via vite.config.ts. Caso precise mudar o alvo, altere a propriedade target no arquivo de configuração.
 
 4. Execução
    Bash
@@ -52,7 +54,7 @@ O projeto está configurado para redirecionar chamadas de /api para o servidor d
 📝 Funcionalidades Implementadas
 [x] Listagem de Matérias-Primas: Consumo de API em tempo real com Redux.
 
-[x] Cadastro de Produtos (RF005): Formulário dinâmico para composição técnica.
+[x] Cadastro de Produtos : Formulário dinâmico para composição técnica.
 
 [x] Alias de Caminho: Configuração de @/ para evitar ../../.
 
