@@ -1,73 +1,59 @@
-# React + TypeScript + Vite
+🚀 Databasis - Gestão de Inventário (Front-end)
+Este é o módulo de interface de usuário do ecossistema Databasis, desenvolvido para gerenciar o fluxo de materiais e a composição técnica de produtos da Autoflex.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔗 Ecossistema Full-Stack
+Para o funcionamento completo da aplicação, é necessário que ambos os módulos estejam rodando:
 
-Currently, two official plugins are available:
+Front-end (Este repo): databasis-azuresect-web
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Back-end (API Quarkus): databasis-azuresect-api
 
-## React Compiler
+🛠️ Tecnologias e Recursos
+React 18 com TypeScript
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+Vite (Build tool ultrarápida)
 
-## Expanding the ESLint configuration
+Redux Toolkit (Gerenciamento de estado global para Materiais/Produtos)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Tailwind CSS (Estilização moderna e responsiva)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Axios (Comunicação com a API via Proxy configurado)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Path Mapping (Uso de @/ para imports limpos)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+🏗️ Estrutura de Pastas
+Organizado por domínios para facilitar a manutenção:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Plaintext
+src/
+├── components/ # Componentes reutilizáveis (ProductForm, Table, etc)
+├── hooks/ # Custom hooks (useAppDispatch, useAppSelector)
+├── pages/ # Páginas da aplicação (MaterialsPage, ProductsPage)
+├── services/ # Configuração do Axios (api.ts)
+├── store/ # Slices e configuração do Redux
+└── types/ # Interfaces e Tipos globais
+🚀 Como Rodar o Projeto
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Pré-requisitos
+   Certifique-se de ter o Node.js instalado.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. Instalação
+   Lembre-se de executar os comandos dentro da pasta raiz do projeto:
+
+Bash
+npm install 3. Configuração do Proxy
+O projeto está configurado para redirecionar chamadas de /api para o servidor do Render automaticamente via vite.config.ts. Caso precise mudar o alvo, altere a propriedade target no arquivo de configuração.
+
+4. Execução
+   Bash
+   npm run dev
+   Acesse em: http://localhost:5173
+
+📝 Funcionalidades Implementadas
+[x] Listagem de Matérias-Primas: Consumo de API em tempo real com Redux.
+
+[x] Cadastro de Produtos (RF005): Formulário dinâmico para composição técnica.
+
+[x] Alias de Caminho: Configuração de @/ para evitar ../../.
+
+[x] CORS Resolvido: Integração via Proxy local e configuração no back-end.
