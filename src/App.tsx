@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { MaterialsPage } from "./pages/Materials/MaterialsPage";
+import { ProductsPage } from "./pages/Products/ProductsPage";
 
 function App() {
   return (
@@ -9,10 +10,7 @@ function App() {
           <Route path="/" element={<Navigate to="/materials" />} />
           <Route path="/materials" element={<MaterialsPage />} />
 
-          <Route
-            path="/products"
-            element={<div className="p-8">Página de Produtos (Em breve)</div>}
-          />
+          <Route path="/products" element={<ProductsPage />} />
           <Route
             path="/suggestion"
             element={<div className="p-8">Sugestão de Produção (Em breve)</div>}
