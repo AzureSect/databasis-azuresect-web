@@ -1,16 +1,16 @@
-import { defineConfig } from "vite";
+import { defineConfig, mergeConfig } from "vite";
+import { defineConfig as defineTestConfig } from "vitest/config";
 import react from "@vitejs/plugin-react-swc";
 import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 
-export default defineConfig({
+const viteConfig = defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
-
   server: {
     proxy: {
       "/api": {
@@ -21,3 +21,14 @@ export default defineConfig({
     },
   },
 });
+
+export default mergeConfig(
+  viteConfig,
+  defineTestConfig({
+    test: {
+      globals: true,
+      environment: "jsdom",
+      setupFiles: "./src/test/setup.ts",
+    },
+  }),
+);
