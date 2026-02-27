@@ -160,3 +160,7 @@ npm run test:ui
 ---
 
 ## Screenshots da Aplicação
+![image](https://github.com/user-attachments/assets/afd5f1d3-0da8-4a72-9b7a-942244362c4a)
+![image](https://github.com/user-attachments/assets/5c66b4cb-cdbf-4902-8d39-103a9f0f544a)
+Render: ![image](https://github.com/user-attachments/assets/68a72231-a194-4953-8f7e-2780bffc408a)
+    
