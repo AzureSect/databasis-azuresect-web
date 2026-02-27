@@ -5,6 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 
 const viteConfig = defineConfig({
+  base: "/databasis-azuresect-web/",
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
