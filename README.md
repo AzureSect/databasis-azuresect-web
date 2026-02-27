@@ -23,6 +23,7 @@ Ele consome uma API desenvolvida em Quarkus e apresenta:
 > A API está hospedada no Render (plano gratuito).\
 > No primeiro acesso pode haver um tempo de espera de até \~1 minuto,
 > pois o servidor entra em modo sleep. Isso é esperado.
+
 > Testes de integração com Cypress estão implementados no repositório da API."
 ---
 
